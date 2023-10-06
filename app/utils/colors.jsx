@@ -10,5 +10,5 @@ export const Colors = {
     green_color:'#1ad34a',
     btn_secondary:'#953a20',
     card_primary:'#24202b',
-    card_secondary:'#2d235f'
+    card_secondary:'#2d235f',
 }
