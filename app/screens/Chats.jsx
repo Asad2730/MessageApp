@@ -49,20 +49,23 @@ const DATA = [
 ];
 
 
-const renderItem = ({ item }) => (
-  <View style={styles.item}>
-    <View style={styles.circularImageContainer}>
-      <Image source={{ uri: item.url }} style={styles.circularImage} />
-    </View>
-     <View style={{flexDirection:'column'}}>
-       <Text style={styles.itemName}>{item.name}</Text>
-       <Text style={styles.itemDescription}>{item.description}</Text>
-     </View>
-  </View>
-);
 
 
-export default function Chats() {
+export default function Chats({navigation}) {
+  
+
+  const renderItem = ({ item }) => (
+    <Pressable style={styles.item} onPress={()=>navigation.navigate('chat-detail')}>
+      <View style={styles.circularImageContainer}>
+        <Image source={{ uri: item.url }} style={styles.circularImage} />
+      </View>
+       <View style={{flexDirection:'column'}}>
+         <Text style={styles.itemName}>{item.name}</Text>
+         <Text style={styles.itemDescription}>{item.description}</Text>
+       </View>
+    </Pressable>
+  );
+
   return (
     <ImageBackground
       source={require('../assets/bg-img.jpeg')}
